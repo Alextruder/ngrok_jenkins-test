@@ -1,0 +1,13 @@
+version: '3'
+services: 
+  web: 
+    stdin_open: true
+    build:
+      context: .
+      Dockerfile: Dockerfile
+    ports: 
+      - "3001:3000"
+    volumes:
+      - /my-app/public/
+      - ./my-app/public:/my-app/public
+      - ./my-app/src:/my-app.src
