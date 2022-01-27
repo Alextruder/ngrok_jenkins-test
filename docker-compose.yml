@@ -8,5 +8,5 @@ services:
     ports: 
       - "3000:3000"
     volumes:
-      - ./my-app/public:/my-app/public
+      - /my-app/public/
       - ./my-app/src:/my-app.src
