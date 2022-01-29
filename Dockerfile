@@ -5,11 +5,11 @@ RUN mkdir /app
 
 WORKDIR /app
 
-COPY jenkins-app/package.json /app
+COPY my-app/package.json /app
 
 RUN npm install
 
-COPY jenkins-app/ /app
+COPY my-app/ /app
 
 EXPOSE 3000
 
