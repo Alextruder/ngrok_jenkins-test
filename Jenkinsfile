@@ -1,11 +1,11 @@
-pipeline {
+pipeline{
     agent any
     
-    stages {
-        stage('Build NPM') {
-            steps {
-                sh "docker-compose up"
+    stages{
+        stage('NPM Build'){
+            steps{
+                bat "docker-compose up"
             }
         }
-    }    
+    }
 }

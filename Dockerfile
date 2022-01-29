@@ -1,12 +1,16 @@
-FROM node:latest
 
-WORKDIR /my-app
+FROM node:16
 
-COPY my-app/package*.json ./
-COPY . ./
+RUN mkdir /app
+
+WORKDIR /app
+
+COPY jenkins-app/package.json /app
 
 RUN npm install
 
+COPY jenkins-app/ /app
+
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["npm","start"]
