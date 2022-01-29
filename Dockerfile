@@ -1,3 +1,4 @@
+
 FROM node:16
 
 RUN mkdir /app
@@ -12,4 +13,4 @@ COPY jenkins-app/ /app
 
 EXPOSE 3000
 
-CMD ["npm","start"] 
+CMD ["npm","start"]

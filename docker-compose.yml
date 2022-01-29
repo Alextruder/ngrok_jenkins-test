@@ -1,11 +1,13 @@
-version: "3"
-
-services:
-  nodejs:
+version: '3'
+services: 
+  web: 
+    stdin_open: true
     build:
       context: .
-      dockerfile: Dockerfile.dockerfile
-    ports:
+      dockerfile: Dockerfile
+    ports: 
       - "3000:3000"
-
-
+    volumes:
+      - /my-app/public/
+      - ./my-app/public:/my-app/public
+      - ./my-app/src:/my-app.src
