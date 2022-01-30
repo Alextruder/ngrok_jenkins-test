@@ -80,3 +80,7 @@ It should look like the following screen.
 ![Display](/images/Pipeline_dash.png)
 
 Finally, use `localhost:3000` in your navigator to see the webapp you created.
+
+It displays the following (cheap) result.
+
+![Final](/images/result.png)
