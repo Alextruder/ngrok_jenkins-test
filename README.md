@@ -20,6 +20,8 @@ Secondly, you need to run ngrok using the following command: `ngrok http 8080`. 
 
 You need to copy the left part of the first or second **Forwarding** line and add it to github webhooks. You can find it at `Setting >> Webhooks >> Add Webhook`. Don't forget to add "**/github-webhook**" at the end of the link.
 
+![webhook](/images/webhook.png)
+
 Then, access to Jenkins Dashbord using `localhost:8080` in your navigator.
 
 ## Verify implementation
@@ -33,7 +35,7 @@ git push
 
 If you did well the previous step, you should have a code 200 with a message "OK".
 
-[ngrok2]()
+![ngrok2](/images/ngrok_cli_2.png)
 
 ## Create a new pipeline
 Now we verified the webhook link worked well, we will create a new Pipeline in Jenkins Dashboard. It will allow the verification of code you will push on Github.
@@ -44,11 +46,13 @@ Then, select the following features:
 
 In **General**:
 - Github project &rarr; add the project URL that you use when you want to clone it, but **without the .git**
-![Pipeline1]()
+
+![Pipeline1](/images/jenkins_conf_1.png)
 
 In **Build Triggers**:
 - GitHub hook trigger for GITScm polling
-![Pipeline2]()
+
+![Pipeline2](/images/jenkins_conf_2.png)
 
 In **Advanced Project Options**: Nothing
 
@@ -58,8 +62,10 @@ In **Pipeline**:
   - Repository: <Your repository>.git
   - Branch Specifier: `*/main`
   - Script Path: `Jenkinsfile`
-![Pipeline3]()
-![Pipeline4]()
+
+![Pipeline3](/images/jenkins_conf_3.png)
+
+![Pipeline4](/images/jenkins_conf_4.png)
   
 Finally, save the pipeline.
   
@@ -71,6 +77,6 @@ Once you have done it, you can see if the pipeline succeed or failed and see log
   
 It should look like the following screen.
   
-![Pipeline_Dash]()
+![Pipeline_Dash](/images/pipeline_dash.png)
 
 Finally, use `localhost:3000` in your navigator to see the webapp you created.
