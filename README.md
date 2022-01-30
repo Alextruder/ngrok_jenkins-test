@@ -76,7 +76,7 @@ First, you will probably need to run your pipeline manually with `Run a build` i
 Once you have done it, you can see if the pipeline succeed or failed and see logs in each case in order to verify if all worked as you wanted or how to correct a problem.
   
 It should look like the following screen.
-  
-![Pipeline_Dash](/images/pipeline_dash.png)
+
+![Display](/images/pipeline_dash.png)
 
 Finally, use `localhost:3000` in your navigator to see the webapp you created.
