@@ -16,7 +16,7 @@ First, create a new repository on Github.
 
 Secondly, you need to run ngrok using the following command: `ngrok http 8080`. If it works well, you will have the following message on your CLI.
 
-![ngrok1]()
+![ngrok1](/images/ngrok_cli_1.png)
 
 You need to copy the left part of the first or second **Forwarding** line and add it to github webhooks. You can find it at `Setting >> Webhooks >> Add Webhook`. Don't forget to add "**/github-webhook**" at the end of the link.
 
