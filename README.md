@@ -12,31 +12,65 @@ You will need to install the following components on your machine:
 
 
 ## Integrate ngrok to Github
-First, you need to run ngrok using the following command: `ngrok http 8080`. If it works well, you will have the following message on your CLI.
+First, create a new repository on Github.
+
+Secondly, you need to run ngrok using the following command: `ngrok http 8080`. If it works well, you will have the following message on your CLI.
 
 ![ngrok1]()
 
-You need to copy the left part of the first or second **Forwarding** line and add it to github webhooks. You can find it at Setting >> Webhooks >> Add Webhook. Don't forget to add "/github-webhook" at the end of the link.
+You need to copy the left part of the first or second **Forwarding** line and add it to github webhooks. You can find it at `Setting >> Webhooks >> Add Webhook`. Don't forget to add "**/github-webhook**" at the end of the link.
 
-Then, access to Jenkins Dashbord using `localhost:8080`
+Then, access to Jenkins Dashbord using `localhost:8080` in your navigator.
+
+## Verify implementation
+Clone your Github repository on your device, add a new file in your project, then use 
+
+```
+git add .
+git commit -m "message"
+git push
+```
+
+If you did well the previous step, you should have a code 200 with a message "OK".
+
+[ngrok2]()
 
 ## Create a new pipeline
-Once you are on Jenkins Dashbord, you will create a pipeline to allow the verification of the code you will push on Github.
+Now we verified the webhook link worked well, we will create a new Pipeline in Jenkins Dashboard. It will allow the verification of code you will push on Github.
 
-To do that, select **New Item** >> **Pipeline**, and add a name for your new project.
+To do so, select `New Item >> Pipeline`, then add a name for your new project and validate your choice.
 
 Then, select the following features:
 
+In **General**:
+- Github project &rarr; add the project URL that you use when you want to clone it, but **without the .git**
 ![Pipeline1]()
 
+In **Build Triggers**:
+- GitHub hook trigger for GITScm polling
 ![Pipeline2]()
 
+In **Advanced Project Options**: Nothing
+
+In **Pipeline**: 
+  - Definition: `Pipeline script from SCM`
+  - SCM: `Git`
+  - Repository: <Your repository>.git
+  - Branch Specifier: `*/main`
+  - Script Path: `Jenkinsfile`
 ![Pipeline3]()
+![Pipeline4]()
+  
+Finally, save the pipeline.
+  
+## Run the pipeline
 
+First, you will probably need to run your pipeline manually with `Run a build` in your pipeline to have a display of the pipeline state. If you push changes without doing this, you can possibly have no output displayed.
+  
+Once you have done it, you can see if the pipeline succeed or failed and see logs in each case in order to verify if all worked as you wanted or how to correct a problem.
+  
+It should look like the following screen.
+  
+![Pipeline_Dash]()
 
-
-
-
-
-
-# The first push will not be displayed, you need to do it manually the first time (on windows btw)
+Finally, use `localhost:3000` in your navigator to see the webapp you created.
