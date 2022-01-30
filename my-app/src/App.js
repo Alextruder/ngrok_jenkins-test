@@ -9,7 +9,7 @@ function App() {
           It's Me!
         </p>
         <a>
-          Hello, my name is Alexandre
+          Hello, my name is Alexandre Vignaud!
         </a>
       </header>
     </div>
