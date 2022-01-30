@@ -77,6 +77,6 @@ Once you have done it, you can see if the pipeline succeed or failed and see log
   
 It should look like the following screen.
 
-![Display](/images/pipeline_dash.png)
+![Display](/images/Pipeline_dash.png)
 
 Finally, use `localhost:3000` in your navigator to see the webapp you created.
