@@ -1,6 +1,6 @@
 # ngrok_jenkins-test
 
-Here, I will display the following instructions to integrate jenkins with github, applied to a little project, which consists in creating a **React** app that will be run with a **Docker** container. 
+In that file, I will give you the instructions to integrate Jenkins with Github, applied to a little project which consists in creating a **React** app that will be run in a **Docker** container. 
 
 ## Components
 You will need to install the following components on your machine: 
@@ -38,7 +38,7 @@ If you did well the previous step, you should have a code 200 with a message "OK
 ![ngrok2](/images/ngrok_cli_2.png)
 
 ## Create a new pipeline
-Now we verified the webhook link worked well, we will create a new Pipeline in Jenkins Dashboard. It will allow the verification of code you will push on Github.
+Now we verified that the webhook link worked well, we will create a new Pipeline in Jenkins Dashboard. It will allow the verification of code you will push on Github.
 
 To do so, select `New Item >> Pipeline`, then add a name for your new project and validate your choice.
 
@@ -73,7 +73,7 @@ Finally, save the pipeline.
 
 First, you will probably need to run your pipeline manually with `Run a build` in your pipeline to have a display of the pipeline state. If you push changes without doing this, you can possibly have no output displayed.
   
-Once you have done it, you can see if the pipeline succeed or failed and see logs in each case in order to verify if all worked as you wanted or how to correct a problem.
+Once you have done it, you can see if the pipeline succeed or failed and see logs in each case in order to verify if all worked as you wanted or have information about the error in your code.
   
 It should look like the following screen.
 
